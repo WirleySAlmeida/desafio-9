@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: myapp
+  labels:
+    app.kubernetes.io/instance: myapp
+    app.kubernetes.io/name: myapp
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: http
+  selector:
+    app.kubernetes.io/instance: myapp
+    app.kubernetes.io/name: myapp
